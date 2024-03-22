@@ -1,0 +1,18 @@
+.transparent-toolbar {
+  background-color: transparent;
+  border-bottom: 1px solid lavender;
+  color: black;
+}
+button{
+  font-size: 20px !important;
+  font-family: Garamond, serif;
+
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-icon-button{
+  margin-right: 10px;
+  max-width: 100px;
+}

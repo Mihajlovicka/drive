@@ -1,0 +1,16 @@
+<div class="container">
+  <h1 class="title">Nearest Vehicles</h1>
+  <div class="vehicle-list">
+    <div *ngFor="let vehicle of nearest" class="vehicle-row">
+      <div class="driver-info">
+        <p><strong>Car brand </strong>{{ vehicle.brand }}</p>
+        <p><strong>Driver </strong>{{ vehicle.driver.firstName }} {{ vehicle.driver.lastName }}</p>
+      </div>
+      <div class="distance-info">
+        <p>Distance: {{ vehicle.totalDistance | number:'1.2-2' }} km</p>
+        <p>Total Price: {{ vehicle.totalPrice | number:'1.2-2' }} EUR</p>
+      </div>
+      <button mat-button (click)="bookTaxi(vehicle)">GET TAXI</button>
+    </div>
+  </div>
+</div>

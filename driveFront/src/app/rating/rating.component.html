@@ -1,0 +1,28 @@
+<div class="modal-container">
+  <mat-card>
+    <h2 mat-dialog-title>Rate chosen ride</h2>
+    <mat-dialog-content>
+      <form>
+        <div class="table">
+          <div class="row">
+            <div class="cell">
+              <mat-form-field  appearance="fill">
+                <mat-label>Rating (1-5)</mat-label>
+                <input matInput type="number" pattern="[1-5]" [(ngModel)]="rating.rating" name="rating" required>
+              </mat-form-field>
+            </div>
+            <div class="cell">
+              <mat-form-field appearance="fill">
+                <mat-label>Comment</mat-label>
+                <input matInput type="text" [(ngModel)]="rating.comment" name="comment">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-button [mat-dialog-close]="rating">Leave rating</button>
+    </mat-dialog-actions>
+  </mat-card>
+</div>

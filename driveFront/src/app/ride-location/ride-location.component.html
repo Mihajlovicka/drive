@@ -1,0 +1,49 @@
+<div class="modal-container">
+  <mat-card>
+    <h2 mat-dialog-title>Your Ride Location</h2>
+    <mat-dialog-content>
+      <form>
+        <div class="table">
+          <div class="row">
+            <label >Current Location</label>
+          </div>
+          <div class="row">
+            <div class="cell">
+
+              <mat-form-field  appearance="fill">
+                <mat-label>Latitude</mat-label>
+                <input matInput type="text" [(ngModel)]="current.latitude" name="clatitude" disabled>
+              </mat-form-field>
+            </div>
+            <div class="cell">
+              <mat-form-field appearance="fill">
+                <mat-label>Longitude</mat-label>
+                <input matInput type="text" [(ngModel)]="current.longitude" name="clongitude" disabled>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <label >End Location</label>
+          </div>
+          <div class="row">
+            <div class="cell">
+              <mat-form-field id="end" appearance="fill">
+                <mat-label>Latitude</mat-label>
+                <input matInput type="number" [(ngModel)]="endLocation.latitude" name="latitude" required>
+              </mat-form-field>
+            </div>
+            <div class="cell">
+              <mat-form-field appearance="fill">
+                <mat-label>Longitude</mat-label>
+                <input matInput type="number" [(ngModel)]="endLocation.longitude" name="longitude" required>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-button (click)="onSubmit()">Find Nearest Vehicles</button>
+    </mat-dialog-actions>
+  </mat-card>
+</div>

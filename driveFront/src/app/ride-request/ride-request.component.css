@@ -1,0 +1,15 @@
+
+
+button {
+  border: 1px solid lavender;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #7292E369;
+}

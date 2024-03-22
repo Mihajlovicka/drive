@@ -1,0 +1,18 @@
+<mat-toolbar color="primary" class="transparent-toolbar">
+  <span style="font-size:24px; ">Delta Drive</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu" style="margin-left: 20px">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <ng-container *ngIf="!service.isLoggedIn(); else notLoggedIn">
+      <button mat-menu-item (click)="login()">Login</button>
+      <button mat-menu-item (click)="register()">Register</button>
+    </ng-container>
+    <ng-template #notLoggedIn>
+      <button mat-menu-item (click)="home()">Get Taxi</button>
+      <button mat-menu-item (click)="allRides()">All Rides</button>
+      <button mat-menu-item (click)="logout()">Logout</button>
+    </ng-template>
+  </mat-menu>
+</mat-toolbar>

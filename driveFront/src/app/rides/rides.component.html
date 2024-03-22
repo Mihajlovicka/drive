@@ -1,0 +1,32 @@
+<div class="container">
+  <h1 class="title">Your rides</h1>
+  <div class="list">
+    <div *ngFor="let ride of rides" class="row-list">
+      <div class="info">
+        <p><strong>Car brand </strong>{{ ride.vehicle.brand }}</p>
+        <p><strong>Driver </strong>{{ ride.vehicle.driver.firstName }} {{ ride.vehicle.driver.lastName }}</p>
+      </div>
+      <div class="info">
+        <p><strong>Start:</strong> {{ ride.startPosition.latitude}}, {{ride.startPosition.longitude }}</p>
+        <p><strong>End:</strong> {{ ride.endPosition.latitude }}, {{ ride.endPosition.longitude }}</p>
+      </div>
+      <div class="info">
+        <p><strong>Distance:</strong> {{ ride.totalDistance | number:'1.2-2'}} km</p>
+        <p><strong>Total Price: </strong>{{ ride.totalPrice | number:'1.2-2' }} EUR</p>
+      </div>
+      <div class="info">
+        <p><strong>Status </strong>{{ ride.state }}</p>
+        <p><strong>Date </strong>{{ ride.createdAt | date: 'dd/MM/yyyy HH:mm' }}</p>
+      </div>
+      <div class="info" *ngIf="ride.state.toString() === 'FINISHED'">
+        <ng-container *ngIf="ride.rating === null; else rating">
+          <button mat-button (click)="rate(ride.id)">Leave rating</button>
+        </ng-container>
+        <ng-template #rating>
+          <p><strong>Rating: </strong>{{ ride.rating?.rating }}</p>
+          <p *ngIf="ride.rating?.comment !== ''"><strong>Comment: </strong>{{ ride.rating?.comment  }}</p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
